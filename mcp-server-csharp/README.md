@@ -7,7 +7,7 @@ This sample shows how to build an MCP server, based in C#, and package it for in
 
 ## Requirements:
 * .NET 10 SDK - `winget install Microsoft.DotNet.SDK.10`
-* WinAppCLI (for MSIX packaging) - `winget install Microsoft.WinAppCli` (not published to winget yet, [install msix from here](https://github.com/microsoft/WinAppCli/releases))
+* WinAppCLI (for MSIX packaging) - `winget install Microsoft.WinAppCli`
 * NodeJS (for MCPB packaging) - `winget install OpenJS.NodeJS.LTS`
 
 ## Build and pack the project
