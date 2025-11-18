@@ -1,0 +1,56 @@
+{
+  "manifest_version": "0.3",
+  "name": "Sample-dotnet-MSIX-server",
+  "version": "1.0.0",
+  "description": "Sample dotnet server for MCP, installed via MSIX",
+  "author": {
+    "name": "Microsoft"
+  },
+  "server": {
+    "type": "binary",
+    "entry_point": "SampleDotNetMCPServer.McpServer.exe",
+    "mcp_config": {
+      "command": "SampleDotNetMCPServer.McpServer.exe",
+      "args": []
+    }
+  },
+  "tools": [
+    {
+      "name": "echo",
+      "description": "Echoes the message back to the client."
+    }
+  ],
+  "tools_generated": false,
+  "license": "MIT",
+  "_meta": {
+    "com.microsoft.windows": {
+      "static_responses": {
+        "initialize": {
+          "protocolVersion": "2025-06-18",
+          "capabilities": {
+            "logging": {},
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "McpServer",
+            "version": "1.0.0.0"
+          }
+        },
+        "tools/list": {
+          "tools": [
+            {
+              "name": "echo",
+              "description": "Echoes the message back to the client.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>MCP Electron Client</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>MCP Electron Client</h1>
+        <p class="subtitle">Model Context Protocol Server Manager</p>
+      </header>
+
+      <!-- Status Bar -->
+      <div id="statusBar" class="status-bar">
+        <span id="statusText">Not connected</span>
+        <button id="disconnectBtn" class="btn btn-small" style="display: none;">Disconnect</button>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Server Selection Panel -->
+        <section id="serverSection" class="panel">
+          <h2>1. Select MCP Server</h2>
+          <button id="fetchServersBtn" class="btn btn-primary">Fetch Servers</button>
+          <div id="serverList" class="server-list"></div>
+          <div id="serverError" class="error"></div>
+        </section>
+
+        <!-- Tools Panel -->
+        <section id="toolsSection" class="panel" style="display: none;">
+          <h2>2. Available Tools</h2>
+          <div id="toolsList" class="tools-list"></div>
+          <div id="toolsError" class="error"></div>
+        </section>
+
+        <!-- Tool Parameters Panel -->
+        <section id="parametersSection" class="panel" style="display: none;">
+          <h2>3. Tool Parameters</h2>
+          <div class="tool-header">
+            <h3 id="selectedToolName"></h3>
+            <p id="selectedToolDesc" class="tool-description"></p>
+          </div>
+          <form id="parametersForm">
+            <div id="parametersContainer"></div>
+            <div class="button-group">
+              <button type="submit" class="btn btn-primary">Call Tool</button>
+              <button type="button" id="cancelToolBtn" class="btn">Cancel</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Results Panel -->
+        <section id="resultsSection" class="panel" style="display: none;">
+          <h2>4. Results</h2>
+          <div id="resultsContainer" class="results-container"></div>
+          <button id="clearResultsBtn" class="btn">Clear Results</button>
+        </section>
+      </div>
+
+      <!-- Loading Overlay -->
+      <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p id="loadingText">Loading...</p>
+      </div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

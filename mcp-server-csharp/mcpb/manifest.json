@@ -1,0 +1,57 @@
+{
+  "manifest_version": "0.3",
+  "name": "Sample-MCPB-MCPServer",
+  "version": "1.0.1",
+  "description": "Sample MCPB MCP Server",
+  "author": {
+    "name": "test"
+  },
+  "server": {
+    "type": "binary",
+    "entry_point": "server/McpServer.exe",
+    "mcp_config": {
+      "command": "${__dirname}/server/McpServer.exe",
+      "args": [],
+      "env": {}
+    }
+  },
+  "tools": [
+    {
+      "name": "echo",
+      "description": "Echoes the message back to the client."
+    }
+  ],
+  "tools_generated": false,
+  "license": "MIT",
+  "_meta": {
+    "com.microsoft.windows": {
+      "static_responses": {
+        "initialize": {
+          "protocolVersion": "2025-06-18",
+          "capabilities": {
+            "logging": {},
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "Sample-MCPB-MCPServer",
+            "version": "1.0.0.0"
+          }
+        },
+        "tools/list": {
+          "tools": [
+            {
+              "name": "echo",
+              "description": "Echoes the message back to the client.",
+              "inputSchema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

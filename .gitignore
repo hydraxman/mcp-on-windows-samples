@@ -1,0 +1,20 @@
+# Node.js dependencies
+node_modules/
+
+# .NET build outputs
+bin/
+obj/
+AppPackages/
+
+# Visual Studio files
+*.user
+*.suo
+*.cache
+.vs/
+
+# Package files
+*.nupkg
+*.snupkg
+
+*.pfx
+*.msix

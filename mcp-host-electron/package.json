@@ -1,0 +1,37 @@
+{
+  "name": "mcp-host-electron",
+  "productName": "mcp-host-electron",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start -- --no-sandbox",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "package-msix": "electron-forge package & winapp pack ./out/mcp-host-electron-win32-x64 --cert ./devcert.pfx",
+    "restore": "winapp restore & winapp cert generate --if-exists skip"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Craig Loewen",
+    "email": "crloewen@microsoft.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@microsoft/winappcli": "file:microsoft-winappcli-0.1.1.tgz",
+    "@modelcontextprotocol/sdk": "^1.21.0",
+    "electron-squirrel-startup": "^1.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.10.2",
+    "@electron-forge/maker-deb": "^7.10.2",
+    "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-squirrel": "^7.10.2",
+    "@electron-forge/maker-zip": "^7.10.2",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
+    "@electron-forge/plugin-fuses": "^7.10.2",
+    "@electron/fuses": "^1.8.0",
+    "electron": "39.1.0"
+  }
+}
